@@ -1,6 +1,5 @@
 <script>
-  
-  import { Link} from "svelte5-router";
+  import { Link } from "svelte5-router";
 
   import { Button } from "$lib/components/ui/button/index.ts";
   import Sun from "lucide-svelte/icons/sun";
@@ -10,47 +9,30 @@
   function isActive(path) {
     return false;
   }
-
 </script>
 
 <header
   class="border-border/40 bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full backdrop-blur"
 >
-  <div class="container flex h-14 max-w-screen-2xl items-center">
-    <div class="hidden md:flex">
-      <a href="/" class="flex items-center space-x-2">
-        
-      </a>
+  <div class=" flex h-14 max-w-screen-2xl items-center">
+    <div class="mr-4 hidden md:flex">
+      <a href="/" class="mr-6 flex items-center space-x-2"><div class="h-6 w-6">Start</div></a>
       <nav class="flex items-center gap-6 text-sm">
-        <Link 
+        <Link
           to="/"
           class="hover:text-foreground/80 transition-colors text-foreground/60 {isActive('home')}"
         >
           Home
         </Link>
-        <Link 
+        <Link
           to="/posts"
           class="hover:text-foreground/80 transition-colors text-foreground/60 {isActive('posts')}"
         >
           Posts
         </Link>
-        <Link 
-          to="/inputs"
-          class="hover:text-foreground/80 transition-colors text-foreground/60 {isActive('inputs')}"
-        >
-          Inputs
-        </Link>
-        <Link 
-          to="/settings"
-          class="hover:text-foreground/80 transition-colors text-foreground/60 {isActive('settings')}"
-        >
-          Settings
-        </Link>
       </nav>
     </div>
-    <div
-      class="flex flex-1 items-center justify-between space-x-2 md:justify-end"
-    >
+    <div class="flex flex-1 items-center justify-between space-x-2 md:justify-end">
       <div class="w-full flex-1 md:w-auto md:flex-none">
         <button
           type="button"
@@ -60,9 +42,7 @@
           ><span class="hidden lg:inline-flex" data-svelte-h="svelte-1y8n1ih"
             >Search documentation...</span
           >
-          <span class="inline-flex lg:hidden" data-svelte-h="svelte-1fzukxx"
-            >Search...</span
-          >
+          <span class="inline-flex lg:hidden" data-svelte-h="svelte-1fzukxx">Search...</span>
           <kbd
             class="bg-muted pointer-events-none absolute right-1.5 top-1.5 hidden h-5 select-none items-center gap-1 rounded border px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex"
             data-svelte-h="svelte-1cdrngm"><span class="text-xs">⌘</span>K</kbd
@@ -100,12 +80,11 @@
                 d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"
               ></path></svg
             >
-            <span class="sr-only" data-svelte-h="svelte-13ytjzu"
-              >X (formerly known as Twitter)</span
+            <span class="sr-only" data-svelte-h="svelte-13ytjzu">X (formerly known as Twitter)</span
             >
           </div></a
         >
-        <Button on:click={toggleMode} variant="outline" size="icon">
+        <Button onclick={toggleMode} variant="outline" size="icon">
           <Sun
             class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
           />
