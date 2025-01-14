@@ -1,11 +1,12 @@
 <script>
+  // import { Router, Route } from "svelte5-router";
   import Nav from "./components/layout/Nav.svelte";
   import { ModeWatcher } from "mode-watcher";
-  import { component } from "/imports/startup/client/routeManager";
-  import { FlowRouter } from "meteor/ostrio:flow-router-extra";
+  
+  // Import pages
+  import Home from "/imports/ui/pages/Home.svelte";
 
-  // Import routes to initialize them
-  import "/imports/startup/client/routes";
+  export let url = "";
 </script>
 
 <div class="flex flex-col min-h-screen w-full text-foreground font-medium">
@@ -13,11 +14,9 @@
   <Nav />
 
   <main class="container flex-grow max-w-screen-2xl">
-    {#if component}
-      <svelte:component this={component} />
-    {:else}
-      <p>Loading...</p>
-    {/if}
+    <!-- <Router {url}>
+      <Route path="/"><Home /></Route>
+    </Router> -->
   </main>
 </div>
 

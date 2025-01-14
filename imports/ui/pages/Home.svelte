@@ -1,5 +1,4 @@
 <script>
-  // import { routeParams } from "/imports/startup/client/routeParamsStore.svelte.js";
 </script>
 
 <div class="">

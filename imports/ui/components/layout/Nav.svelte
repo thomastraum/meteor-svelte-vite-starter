@@ -1,21 +1,11 @@
 <script>
-  import { FlowRouter } from "meteor/ostrio:flow-router-extra";
-  // import { currentRoute } from "/imports/ui/stores/stores";
 
   import { Button } from "$lib/components/ui/button/index.ts";
   import Sun from "lucide-svelte/icons/sun";
   import Moon from "lucide-svelte/icons/moon";
   import { toggleMode } from "mode-watcher";
 
-  // let activeRouteName;
-  // currentRoute.subscribe((newRouteName) => (activeRouteName = newRouteName));
 
-  $: isActive = (routeName) => {
-    return false;
-    // return activeRouteName === routeName
-      // ? "text-white hover:bg-black cursor-default"
-      // : "text-gray-300 hover:bg-gray-700 hover:text-white";
-  };
 </script>
 
 <header
@@ -24,58 +14,29 @@
   <div class="container flex h-14 max-w-screen-2xl items-center">
     <div class="hidden md:flex">
       <a href="/" class="flex items-center space-x-2">
-        <!-- <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 256 256"
-          class="h-6 w-6"
-        >
-          <rect width="256" height="256" fill="none"></rect>
-          <line
-            x1="208"
-            y1="128"
-            x2="128"
-            y2="208"
-            fill="none"
-            stroke="#EB4F27"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="16"
-          ></line>
-          <line
-            x1="192"
-            y1="40"
-            x2="40"
-            y2="192"
-            fill="none"
-            stroke="#EB4F27"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="16"
-          ></line>
-        </svg> -->
-        <!-- <span class="hidden font-bold xl:inline-block">shadcn-svelte</span> -->
+ad
       </a>
       <nav class="flex items-center gap-6 text-sm">
         <a
-          href={FlowRouter.path("home")}
+          href={'#'}
           class="hover:text-foreground/80 transition-colors text-foreground/60 {isActive(
             'home',
           )}">Home</a
         >
         <a
-          href={FlowRouter.path("runs")}
+          href={'#'}
           class="hover:text-foreground/80 transition-colors text-foreground/60 {isActive(
             'runs',
           )} ">Runs</a
         >
         <a
-          href={FlowRouter.path("inputs")}
+          href={'#'}
           class="hover:text-foreground/80 transition-colors text-foreground/60 {isActive(
             'inputs',
           )}">Inputs</a
         >
         <a
-          href={FlowRouter.path("settings")}
+          href={'#'}
           class="hover:text-foreground/80 transition-colors text-foreground/60 {isActive(
             'settings',
           )}">Settings</a
