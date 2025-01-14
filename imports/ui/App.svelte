@@ -1,22 +1,23 @@
 <script>
-  // import { Router, Route } from "svelte5-router";
+  import { Router, Route } from "svelte5-router";
   import Nav from "./components/layout/Nav.svelte";
   import { ModeWatcher } from "mode-watcher";
   
   // Import pages
   import Home from "/imports/ui/pages/Home.svelte";
-
+  import PostsPage from "/imports/ui/pages/PostsPage.svelte";
   export let url = "";
 </script>
 
 <div class="flex flex-col min-h-screen w-full text-foreground font-medium">
-  <ModeWatcher />
-  <Nav />
 
   <main class="container flex-grow max-w-screen-2xl">
-    <!-- <Router {url}>
+    <Router {url}>
+      <ModeWatcher />
+      <Nav />
+      <Route path="/posts"><PostsPage /></Route>
       <Route path="/"><Home /></Route>
-    </Router> -->
+    </Router>
   </main>
 </div>
 

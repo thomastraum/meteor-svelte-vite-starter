@@ -1,10 +1,15 @@
 <script>
+  
+  import { Link} from "svelte5-router";
 
   import { Button } from "$lib/components/ui/button/index.ts";
   import Sun from "lucide-svelte/icons/sun";
   import Moon from "lucide-svelte/icons/moon";
   import { toggleMode } from "mode-watcher";
 
+  function isActive(path) {
+    return false;
+  }
 
 </script>
 
@@ -14,33 +19,33 @@
   <div class="container flex h-14 max-w-screen-2xl items-center">
     <div class="hidden md:flex">
       <a href="/" class="flex items-center space-x-2">
-ad
+        
       </a>
       <nav class="flex items-center gap-6 text-sm">
-        <a
-          href={'#'}
-          class="hover:text-foreground/80 transition-colors text-foreground/60 {isActive(
-            'home',
-          )}">Home</a
+        <Link 
+          to="/"
+          class="hover:text-foreground/80 transition-colors text-foreground/60 {isActive('home')}"
         >
-        <a
-          href={'#'}
-          class="hover:text-foreground/80 transition-colors text-foreground/60 {isActive(
-            'runs',
-          )} ">Runs</a
+          Home
+        </Link>
+        <Link 
+          to="/posts"
+          class="hover:text-foreground/80 transition-colors text-foreground/60 {isActive('posts')}"
         >
-        <a
-          href={'#'}
-          class="hover:text-foreground/80 transition-colors text-foreground/60 {isActive(
-            'inputs',
-          )}">Inputs</a
+          Posts
+        </Link>
+        <Link 
+          to="/inputs"
+          class="hover:text-foreground/80 transition-colors text-foreground/60 {isActive('inputs')}"
         >
-        <a
-          href={'#'}
-          class="hover:text-foreground/80 transition-colors text-foreground/60 {isActive(
-            'settings',
-          )}">Settings</a
+          Inputs
+        </Link>
+        <Link 
+          to="/settings"
+          class="hover:text-foreground/80 transition-colors text-foreground/60 {isActive('settings')}"
         >
+          Settings
+        </Link>
       </nav>
     </div>
     <div
