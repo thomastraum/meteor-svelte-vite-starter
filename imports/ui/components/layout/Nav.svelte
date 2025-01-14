@@ -16,7 +16,7 @@
 >
   <div class=" flex h-14 max-w-screen-2xl items-center">
     <div class="mr-4 hidden md:flex">
-      <a href="/" class="mr-6 flex items-center space-x-2"><div class="h-6 w-6">Start</div></a>
+      <Link to="/" class="mr-6 flex items-center space-x-2"><div class="h-6 w-6">Start</div></Link>
       <nav class="flex items-center gap-6 text-sm">
         <Link
           to="/"

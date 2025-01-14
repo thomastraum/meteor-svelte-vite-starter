@@ -34,7 +34,7 @@
     "@babel/eslint-parser": "^7.26.5",
     "@babel/plugin-syntax-import-assertions": "^7.26.0",
     "@meteorjs/eslint-config-meteor": "^1.0.5",
-    "@sveltejs/vite-plugin-svelte": "^4.0.0",
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "@tsconfig/svelte": "^5.0.0",
     "autoprefixer": "^10.4.20",
     "bits-ui": "^1.0.0-next.72",
@@ -44,7 +44,7 @@
     "eslint-plugin-meteor": "^7.3.0",
     "eslint-plugin-svelte": "^2.46.0",
     "lucide-svelte": "^0.468.0",
-    "meteor-vite": "^1.12.0",
+    "meteor-vite": "^3.1.2",
     "svelte": "^5.1.9",
     "svelte-check": "^3.4.6",
     "svelte-preprocess": "^5.0.4",
@@ -53,7 +53,7 @@
     "tailwind-variants": "^0.3.0",
     "tailwindcss": "^3.4.9",
     "tailwindcss-animate": "^1.0.7",
-    "vite": "^5.4.10"
+    "vite": "^6.0.7"
   },
   "meteor": {
     "mainModule": {

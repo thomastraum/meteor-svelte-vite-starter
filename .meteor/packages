@@ -22,4 +22,4 @@ zodern:types            # Enable types from meteor/atmosphere packages
 ostrio:meteor-root
 insecure@1.0.8
 logging@1.3.5
-jorgenvatle:vite-bundler
+jorgenvatle:vite
