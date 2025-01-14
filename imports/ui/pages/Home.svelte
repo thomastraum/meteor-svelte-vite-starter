@@ -1,8 +1,7 @@
 <script>
-  // import Inputs from "../features/Inputs.svelte";
-  import WorkflowsSelect from "/imports/ui/features/WorkflowsSelect.svelte";
-  import Runs from "/imports/ui/features/Runs.svelte";
-  import { routeParams } from "/imports/startup/client/routeParamsStore";
+  // import { routeParams } from "/imports/startup/client/routeParamsStore.svelte.js";
 </script>
 
-<WorkflowsSelect />
+<div class="">
+  <h1 class="py-4">Home</h1>
+</div>

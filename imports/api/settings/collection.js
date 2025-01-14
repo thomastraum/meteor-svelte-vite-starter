@@ -1,1 +1,0 @@
-export const SettingsCollection = new Mongo.Collection("settings");
