@@ -1,0 +1,346 @@
+{
+  "8": {
+    "inputs": {
+      "samples": [
+        "36",
+        0
+      ],
+      "vae": [
+        "37",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "img2img",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "14": {
+    "inputs": {
+      "ckpt_name": "zavychromaxl_v90.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint Base"
+    }
+  },
+  "16": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "crop_w": 0,
+      "crop_h": 0,
+      "target_width": 4096,
+      "target_height": 4096,
+      "text_g": "A mysterious underwater photo of a foggy, submerged canyon, with towering rock formations framing the sides, against a backdrop of deep blue-green water, a faint, diffused light source visible in the distance, extremely foggy and hazy underwater atmosphere, high detail, ethereal and dreamlike, photorealistic, 8k resolution",
+      "text_l": "A mysterious underwater photo of a foggy, submerged canyon, with towering rock formations framing the sides, against a backdrop of deep blue-green water, a faint, diffused light source visible in the distance, extremely foggy and hazy underwater atmosphere, high detail, ethereal and dreamlike, photorealistic, 8k resolution",
+      "clip": [
+        "60",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeSDXL",
+    "_meta": {
+      "title": "CLIPTextEncodeSDXL"
+    }
+  },
+  "19": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "crop_w": 0,
+      "crop_h": 0,
+      "target_width": 4096,
+      "target_height": 4096,
+      "text_g": "blurry, horror, rendering, illustration, drawing, painting, saturated",
+      "text_l": "blurry, horror, rendering, illustration, drawing, painting, saturated, oversaturated",
+      "clip": [
+        "60",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeSDXL",
+    "_meta": {
+      "title": "CLIPTextEncodeSDXL"
+    }
+  },
+  "36": {
+    "inputs": {
+      "seed": 242354227788653,
+      "steps": 20,
+      "cfg": 6,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "exponential",
+      "denoise": 1,
+      "model": [
+        "60",
+        0
+      ],
+      "positive": [
+        "58",
+        0
+      ],
+      "negative": [
+        "58",
+        1
+      ],
+      "latent_image": [
+        "39",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "37": {
+    "inputs": {
+      "vae_name": "sdxl_vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "39": {
+    "inputs": {
+      "pixels": [
+        "40",
+        0
+      ],
+      "vae": [
+        "37",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "40": {
+    "inputs": {
+      "upscale_method": "nearest-exact",
+      "width": 1344,
+      "height": 768,
+      "crop": "center",
+      "image": [
+        "66",
+        0
+      ]
+    },
+    "class_type": "ImageScale",
+    "_meta": {
+      "title": "Upscale Image"
+    }
+  },
+  "44": {
+    "inputs": {
+      "strength": 0.25,
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "16",
+        0
+      ],
+      "negative": [
+        "19",
+        0
+      ],
+      "control_net": [
+        "47",
+        0
+      ],
+      "image": [
+        "55",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "Apply ControlNet"
+    }
+  },
+  "45": {
+    "inputs": {
+      "control_net_name": "diffusers_xl_depth_full.safetensors",
+      "model": [
+        "60",
+        0
+      ]
+    },
+    "class_type": "DiffControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model (diff)"
+    }
+  },
+  "47": {
+    "inputs": {
+      "control_net_name": "diffusers_xl_canny_full.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "51": {
+    "inputs": {
+      "images": [
+        "55",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "52": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "55": {
+    "inputs": {
+      "low_threshold": 100,
+      "high_threshold": 200,
+      "resolution": 512,
+      "image": [
+        "66",
+        0
+      ]
+    },
+    "class_type": "CannyEdgePreprocessor",
+    "_meta": {
+      "title": "Canny Edge"
+    }
+  },
+  "58": {
+    "inputs": {
+      "strength": 0.75,
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "44",
+        0
+      ],
+      "negative": [
+        "44",
+        1
+      ],
+      "control_net": [
+        "45",
+        0
+      ],
+      "image": [
+        "69",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "Apply ControlNet"
+    }
+  },
+  "60": {
+    "inputs": {
+      "lora_name": "add-detail-xl.safetensors",
+      "strength_model": 1.5,
+      "strength_clip": 1.5,
+      "model": [
+        "14",
+        0
+      ],
+      "clip": [
+        "14",
+        1
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "Load LoRA"
+    }
+  },
+  "64": {
+    "inputs": {
+      "print_to_screen": "enable",
+      "choose_pass": "depth",
+      "image_beauty": "test-scene-v001_AOV_RS_Camera_N.png",
+      "image_normal": "11-landscape-v001_AOV_RS_Camera_Depth 0.png",
+      "image_depth": "09-landscape-v002-RS_Camera.png"
+    },
+    "class_type": "TT_Save_Pass",
+    "_meta": {
+      "title": "tt save pass Node"
+    }
+  },
+  "65": {
+    "inputs": {
+      "images": [
+        "69",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "66": {
+    "inputs": {
+      "print_to_screen": "enable",
+      "choose_pass": "beauty",
+      "image_beauty": "test-scene-v001_AOV_RS_Camera_N.png",
+      "image_normal": "09-landscape-v002_AOV_RS_Camera_Depth 0.png",
+      "image_depth": "11-landscape-v001-RS_Camera.png"
+    },
+    "class_type": "TT_Save_Pass",
+    "_meta": {
+      "title": "tt save pass Node"
+    }
+  },
+  "68": {
+    "inputs": {
+      "images": [
+        "66",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "69": {
+    "inputs": {
+      "image": [
+        "64",
+        0
+      ]
+    },
+    "class_type": "ImageInvert",
+    "_meta": {
+      "title": "Invert Image"
+    }
+  }
+}

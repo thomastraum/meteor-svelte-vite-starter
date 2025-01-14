@@ -1,0 +1,287 @@
+{
+  "8": {
+    "inputs": {
+      "samples": [
+        "36",
+        0
+      ],
+      "vae": [
+        "37",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "img2img",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "14": {
+    "inputs": {
+      "ckpt_name": "zavychromaxl_v90.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint Base"
+    }
+  },
+  "16": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "crop_w": 0,
+      "crop_h": 0,
+      "target_width": 4096,
+      "target_height": 4096,
+      "text_g": "a photo of an old rugged tree (trunk:1.2) floating in the sky with ultra-dramatic clouds lit by a soft evening sun, DOF, Depth of Field, wide angle shot, cinematic, (masterpiece, best quality:1.2), ultra-detailed,\n",
+      "text_l": "a photo of an old rugged tree (trunk:1.2) floating in the sky with ultra-dramatic clouds lit by a soft evening sun, DOF, Depth of Field, wide angle shot, cinematic, (masterpiece, best quality:1.2), ultra-detailed,\n",
+      "clip": [
+        "60",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeSDXL",
+    "_meta": {
+      "title": "CLIPTextEncodeSDXL"
+    }
+  },
+  "19": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "crop_w": 0,
+      "crop_h": 0,
+      "target_width": 4096,
+      "target_height": 4096,
+      "text_g": "blurry, horror, rendering, illustration, drawing, painting",
+      "text_l": "blurry, horror, rendering, illustration, drawing, painting",
+      "clip": [
+        "60",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeSDXL",
+    "_meta": {
+      "title": "CLIPTextEncodeSDXL"
+    }
+  },
+  "36": {
+    "inputs": {
+      "seed": 626193811231779,
+      "steps": 20,
+      "cfg": 6,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "exponential",
+      "denoise": 0.85,
+      "model": [
+        "60",
+        0
+      ],
+      "positive": [
+        "58",
+        0
+      ],
+      "negative": [
+        "58",
+        1
+      ],
+      "latent_image": [
+        "39",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "37": {
+    "inputs": {
+      "vae_name": "sdxl_vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "39": {
+    "inputs": {
+      "pixels": [
+        "40",
+        0
+      ],
+      "vae": [
+        "37",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "40": {
+    "inputs": {
+      "upscale_method": "nearest-exact",
+      "width": 1024,
+      "height": 1024,
+      "crop": "center",
+      "image": [
+        "66",
+        0
+      ]
+    },
+    "class_type": "ImageScale",
+    "_meta": {
+      "title": "Upscale Image"
+    }
+  },
+  "44": {
+    "inputs": {
+      "strength": 0.2,
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "16",
+        0
+      ],
+      "negative": [
+        "19",
+        0
+      ],
+      "control_net": [
+        "47",
+        0
+      ],
+      "image": [
+        "55",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "Apply ControlNet (Advanced)"
+    }
+  },
+  "45": {
+    "inputs": {
+      "control_net_name": "diffusers_xl_depth_full.safetensors",
+      "model": [
+        "60",
+        0
+      ]
+    },
+    "class_type": "DiffControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model (diff)"
+    }
+  },
+  "47": {
+    "inputs": {
+      "control_net_name": "diffusers_xl_canny_full.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "55": {
+    "inputs": {
+      "low_threshold": 100,
+      "high_threshold": 200,
+      "resolution": 512,
+      "image": [
+        "66",
+        0
+      ]
+    },
+    "class_type": "CannyEdgePreprocessor",
+    "_meta": {
+      "title": "Canny Edge"
+    }
+  },
+  "58": {
+    "inputs": {
+      "strength": 1,
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "44",
+        0
+      ],
+      "negative": [
+        "44",
+        1
+      ],
+      "control_net": [
+        "45",
+        0
+      ],
+      "image": [
+        "64",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "Apply ControlNet (Advanced)"
+    }
+  },
+  "60": {
+    "inputs": {
+      "lora_name": "add-detail-xl.safetensors",
+      "strength_model": 2,
+      "strength_clip": 2,
+      "model": [
+        "14",
+        0
+      ],
+      "clip": [
+        "14",
+        1
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "Load LoRA"
+    }
+  },
+  "64": {
+    "inputs": {
+      "print_to_screen": "enable",
+      "choose_pass": "depth",
+      "image_beauty": "test-scene-v001-RS_Camera",
+      "image_normal": "test-scene-v001_AOV_RS_Camera_N",
+      "image_depth": "test-scene-v001_AOV_RS_Camera_Depth 0"
+    },
+    "class_type": "TT_Save_Pass",
+    "_meta": {
+      "title": "tt save pass Node"
+    }
+  },
+  "66": {
+    "inputs": {
+      "print_to_screen": "enable",
+      "choose_pass": "beauty",
+      "image_beauty": "test-scene-v001-RS_Camera",
+      "image_normal": "test-scene-v001_AOV_RS_Camera_N",
+      "image_depth": "test-scene-v001_AOV_RS_Camera_Depth 0"
+    },
+    "class_type": "TT_Save_Pass",
+    "_meta": {
+      "title": "tt save pass Node"
+    }
+  }
+}

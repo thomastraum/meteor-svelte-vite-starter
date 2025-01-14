@@ -1,0 +1,97 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "/imports/*": ["imports/*"],
+      "*": [
+        "*"
+      ],
+      "/*": [
+        "./*"
+      ],
+      "meteor/mongo": [
+        "/home/tommi/.meteor/packages/mongo/2.0.1/web.browser/local_collection_driver.js",
+        "/home/tommi/.meteor/packages/mongo/2.0.1/web.browser/collection.js",
+        "/home/tommi/.meteor/packages/mongo/2.0.1/web.browser/connection_options.js",
+        "/home/tommi/.meteor/packages/mongo/2.0.1/web.browser/doc_fetcher.js",
+        "/home/tommi/.meteor/packages/mongo/2.0.1/web.browser/mongo_driver.js",
+        "/home/tommi/.meteor/packages/mongo/2.0.1/web.browser/mongo_utils.js",
+        "/home/tommi/.meteor/packages/mongo/2.0.1/web.browser/observe_multiplex.js",
+        "/home/tommi/.meteor/packages/mongo/2.0.1/web.browser/oplog_observe_driver.js",
+        "/home/tommi/.meteor/packages/mongo/2.0.1/web.browser/oplog_tailing.js",
+        "/home/tommi/.meteor/packages/mongo/2.0.1/web.browser/oplog_v2_converter.js",
+        "/home/tommi/.meteor/packages/mongo/2.0.1/web.browser/polling_observe_driver.js",
+        "/home/tommi/.meteor/packages/mongo/2.0.1/web.browser/remote_collection_driver.js"
+      ],
+      "meteor/es5-shim": [
+        "/home/tommi/.meteor/packages/es5-shim/4.8.1/web.browser/client.js",
+        "/home/tommi/.meteor/packages/es5-shim/4.8.1/web.browser/console.js",
+        "/home/tommi/.meteor/packages/es5-shim/4.8.1/web.browser/cordova.js",
+        "/home/tommi/.meteor/packages/es5-shim/4.8.1/web.browser/export_globals.js",
+        "/home/tommi/.meteor/packages/es5-shim/4.8.1/web.browser/import_globals.js"
+      ],
+      "meteor/ecmascript": [
+        "/home/tommi/.meteor/packages/ecmascript/0.16.9/web.browser/ecmascript.js"
+      ],
+      "meteor/shell-server": [
+        "/home/tommi/.meteor/packages/shell-server/0.6.0/web.browser/main.js",
+        "/home/tommi/.meteor/packages/shell-server/0.6.0/web.browser/shell-server.js"
+      ],
+      "meteor/zodern:melte": [
+        "/home/tommi/.meteor/packages/zodern_melte/1.7.2/web.browser/tracker.js",
+        "/home/tommi/.meteor/packages/zodern_melte/1.7.2/web.browser/hmr-runtime.js",
+        "/home/tommi/.meteor/packages/zodern_melte/1.7.2/web.browser/plugin.js",
+        "/home/tommi/.meteor/packages/zodern_melte/1.7.2/web.browser/proxy-adapter.js"
+      ],
+      "meteor/hot-module-replacement": [
+        "/home/tommi/.meteor/packages/hot-module-replacement/0.5.4/web.browser/hot-api.js",
+        "/home/tommi/.meteor/packages/hot-module-replacement/0.5.4/web.browser/client.js",
+        "/home/tommi/.meteor/packages/hot-module-replacement/0.5.4/web.browser/server.js"
+      ],
+      "meteor/ostrio:meteor-root": [
+        "/home/tommi/.meteor/packages/ostrio_meteor-root/1.1.1/web.browser/meteor-root.js"
+      ],
+      "meteor/logging": [
+        "/home/tommi/.meteor/packages/logging/1.3.5/web.browser/logging.js",
+        "/home/tommi/.meteor/packages/logging/1.3.5/web.browser/logging_browser.js",
+        "/home/tommi/.meteor/packages/logging/1.3.5/web.browser/logging_cordova.js",
+        "/home/tommi/.meteor/packages/logging/1.3.5/web.browser/logging_server.js"
+      ],
+      "meteor/ostrio:flow-router-extra": [
+        "/home/tommi/.meteor/packages/ostrio_flow-router-extra/2.11.0/web.browser/client-modules.js",
+        "/home/tommi/.meteor/packages/ostrio_flow-router-extra/2.11.0/web.browser/client/triggers.js",
+        "/home/tommi/.meteor/packages/ostrio_flow-router-extra/2.11.0/web.browser/client/router.js",
+        "/home/tommi/.meteor/packages/ostrio_flow-router-extra/2.11.0/web.browser/client/group.js",
+        "/home/tommi/.meteor/packages/ostrio_flow-router-extra/2.11.0/web.browser/client/route.js",
+        "/home/tommi/.meteor/packages/ostrio_flow-router-extra/2.11.0/web.browser/client/_init.js",
+        "/home/tommi/.meteor/packages/ostrio_flow-router-extra/2.11.0/web.browser/lib/router.js",
+        "/home/tommi/.meteor/packages/ostrio_flow-router-extra/2.11.0/web.browser/server/router.js",
+        "/home/tommi/.meteor/packages/ostrio_flow-router-extra/2.11.0/web.browser/server/group.js",
+        "/home/tommi/.meteor/packages/ostrio_flow-router-extra/2.11.0/web.browser/server/route.js",
+        "/home/tommi/.meteor/packages/ostrio_flow-router-extra/2.11.0/web.browser/server/_init.js"
+      ]
+    },
+    "checkJs": true,
+    "allowJs": true,
+    "jsx": "react"
+  },
+  "include": [
+    "client/**/*",
+    "server/**/*",
+    "imports/**/*"
+  ],
+  "exclude": [
+    "build",
+    "node_modules",
+    ".meteor",
+    "public",
+    "tests",
+    "**/*.spec.js",
+    "**/*.test.js"
+  ],
+  "typeAcquisition": {
+    "include": [
+      "meteor"
+    ]
+  }
+}

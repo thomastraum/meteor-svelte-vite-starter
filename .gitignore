@@ -1,0 +1,53 @@
+# Meteor specific
+.meteor/local
+.meteor/meteorite
+packages/*/.build*
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Build outputs
+dist/
+.build/
+.svelte-kit/
+
+# Environment
+.env
+.env.*
+!.env.example
+settings.json
+settings.*.json
+!settings.example.json
+
+# IDE and editors
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.sublime-project
+*.sublime-workspace
+
+# OS specific
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Testing
+coverage/
+
+# Vite
+.vite/
+
+# Development
+*.local 

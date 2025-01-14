@@ -1,0 +1,57 @@
+{
+  "name": "meteor-svelte-vite-starter",
+  "description": "A starter template for Meteor.js with Svelte, Vite, and TailwindCSS",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "meteor --exclude-archs 'web.browser.legacy, web.cordova' --settings settings.json",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer",
+    "lint": "eslint . --ext .js,.svelte",
+    "lint:fix": "eslint . --ext .js,.svelte --fix",
+    "format": "prettier --write \"**/*.{js,svelte,json,md}\"",
+    "check": "npm run lint && npm run format"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.23.5",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.9",
+    "@tailwindcss/typography": "^0.5.15",
+    "autoprefixer": "^10.4.19",
+    "date-fns": "^4.1.0",
+    "express": "^4.19.2",
+    "meteor-node-stubs": "^1.2.7",
+    "mode-watcher": "^0.5.0",
+    "postcss": "^8.4.40",
+    "tailwindcss": "^3.4.7"
+  },
+  "devDependencies": {
+    "@meteorjs/eslint-config-meteor": "^1.0.5",
+    "@sveltejs/vite-plugin-svelte": "^4.0.0",
+    "@tsconfig/svelte": "^5.0.0",
+    "autoprefixer": "^10.4.20",
+    "bits-ui": "^1.0.0-next.72",
+    "clsx": "^2.1.1",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-svelte": "^2.46.0",
+    "lucide-svelte": "^0.468.0",
+    "meteor-vite": "^1.12.0",
+    "svelte": "^5.1.9",
+    "svelte-check": "^3.4.6",
+    "svelte-preprocess": "^5.0.4",
+    "tailwind-merge": "^2.5.5",
+    "tailwind-variants": "^0.3.0",
+    "tailwindcss": "^3.4.9",
+    "tailwindcss-animate": "^1.0.7",
+    "vite": "^5.4.10"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.js",
+      "server": "server/main.js"
+    }
+  }
+}
