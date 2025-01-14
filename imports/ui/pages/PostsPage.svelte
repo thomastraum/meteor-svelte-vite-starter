@@ -1,69 +1,28 @@
 <script>
-  import { Meteor } from "meteor/meteor";
-  import { Tracker } from "meteor/tracker";
-  import { Posts } from "/imports/api/posts/PostsCollection.js";
-
+  import { onDestroy } from "svelte";
   import Button from "$lib/components/ui/button/button.svelte";
+  import { usePosts } from "/imports/api/posts/posts.svelte.js";
 
-  let postsSubs = Meteor.subscribe("posts.all");
-  let subIsReady = $state(false);
-  let posts = $state([]);
-  let postsCount = $state(0);
-
-  $effect.pre(() => {
-    const computation = Tracker.autorun(() => {
-      subIsReady = postsSubs.ready();
-      if (subIsReady) {
-        posts = Posts.find({}, { sort: { createdAt: -1 } }).fetch();
-      }
-    });
-    return () => {
-      computation.stop();
-    };
-  });
-
-  async function addPost() {
-    const newPost = {
-      title: `post ${posts.length + 1}`,
-      content: "Content of the new post",
-      createdAt: new Date(),
-    };
-
-    try {
-      await Posts.insertAsync(newPost);
-      console.log("Post added successfully!");
-    } catch (error) {
-      console.error("Error adding post:", error);
-    }
-  }
-
-  async function deletePost(postId) {
-    try {
-      await Posts.removeAsync(postId);
-      console.log("Post deleted successfully!");
-    } catch (error) {
-      console.error("Error deleting post:", error);
-    }
-  }
+  const postsManager = usePosts();
 </script>
 
 <h1>Posts</h1>
 <div>
-  {#if subIsReady}
+  {#if postsManager.isReady}
     <Button
       onclick={() => {
-        addPost();
+        postsManager.addPost("New post", "This is a new post");
       }}>Add a post</Button
     >
-    there are {posts.length}
-    {posts.length === 1 ? "post" : "posts"}
-    {#each posts as post}
+    there are {postsManager.posts.length}
+    {postsManager.posts.length === 1 ? "post" : "posts"}
+    {#each postsManager.posts as post}
       <div>
         <h2>{post.title}</h2>
         <p>{post.content}</p>
         <Button
           onclick={() => {
-            deletePost(post._id);
+            postsManager.deletePost(post._id);
           }}>Delete</Button
         >
       </div>
