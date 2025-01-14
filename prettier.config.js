@@ -14,4 +14,16 @@ module.exports = {
   bracketSpacing: true,
   arrowParens: "avoid",
   endOfLine: "lf",
+  proseWrap: "always",
+  htmlWhitespaceSensitivity: "css",
+  vueIndentScriptAndStyle: true,
+  embeddedLanguageFormatting: "auto",
+  overrides: [
+    {
+      files: "*.svelte",
+      options: {
+        parser: "svelte"
+      }
+    }
+  ]
 };

@@ -1,0 +1,6 @@
+.meteor/
+node_modules/
+.vite/
+dist/
+.svelte-kit/
+build/

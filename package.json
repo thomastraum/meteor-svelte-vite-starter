@@ -11,7 +11,8 @@
     "lint": "eslint . --ext .js,.svelte",
     "lint:fix": "eslint . --ext .js,.svelte --fix",
     "format": "prettier --write \"**/*.{js,svelte,json,md}\"",
-    "check": "npm run lint && npm run format"
+    "format:check": "prettier --check \"**/*.{js,svelte,json,md}\"",
+    "check": "npm run lint && npm run format:check"
   },
   "dependencies": {
     "@babel/runtime": "^7.23.5",
@@ -29,6 +30,9 @@
     "tailwindcss": "^3.4.7"
   },
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/eslint-parser": "^7.26.5",
+    "@babel/plugin-syntax-import-assertions": "^7.26.0",
     "@meteorjs/eslint-config-meteor": "^1.0.5",
     "@sveltejs/vite-plugin-svelte": "^4.0.0",
     "@tsconfig/svelte": "^5.0.0",
@@ -37,6 +41,7 @@
     "clsx": "^2.1.1",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-meteor": "^7.3.0",
     "eslint-plugin-svelte": "^2.46.0",
     "lucide-svelte": "^0.468.0",
     "meteor-vite": "^1.12.0",
