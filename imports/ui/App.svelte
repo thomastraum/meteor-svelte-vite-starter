@@ -6,6 +6,7 @@
   // Import pages
   import Home from "/imports/ui/pages/Home.svelte";
   import PostsPage from "/imports/ui/pages/PostsPage.svelte";
+  import SearchPosts from "/imports/ui/pages/SearchPosts.svelte";
   let url = "";
 </script>
 
@@ -16,6 +17,7 @@
       <Nav />
       <Route path="/posts"><PostsPage /></Route>
       <Route path="/"><Home /></Route>
+      <Route path="/search"><SearchPosts /></Route>
     </Router>
   </main>
 </div>

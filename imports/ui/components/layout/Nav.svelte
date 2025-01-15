@@ -30,6 +30,12 @@
         >
           Posts
         </Link>
+        <Link
+          to="/search"
+          class="hover:text-foreground/80 transition-colors text-foreground/60 {isActive('search')}"
+        >
+          Search
+        </Link>
       </nav>
     </div>
     <div class="flex flex-1 items-center justify-between space-x-2 md:justify-end">
