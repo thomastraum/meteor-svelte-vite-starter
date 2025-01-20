@@ -57,7 +57,7 @@
   },
   "meteor": {
     "mainModule": {
-      "client": "client/main.js",
+      "client": "client/entry-meteor.js",
       "server": "server/main.js"
     }
   }
