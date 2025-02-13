@@ -46,3 +46,16 @@ meteor npm start
 - `npm run lint` - Run ESLint
 - `npm run format` - Run Prettier
 - `npm run check` - Run both lint and format
+
+
+## build
+
+```bash
+meteor build --directory ./build
+cd build/bundle
+(cd programs/server && npm install)
+NODE_ENV=production PORT=3000 MONGO_URL=mongodb://localhost:27017/yourapp ROOT_URL=http://localhost:3000 node main.js
+
+```
+
+
